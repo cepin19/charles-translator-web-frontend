@@ -4,6 +4,7 @@ import { SettingsDialog, SettingsDialogButton } from "./SettingsDialog";
 import { TryAndroidAppBanner } from "./TryAndroidAppBanner";
 import { AppBar, Toolbar } from "@mui/material";
 import AboutUsDialog from "../components/AboutUsDialog";
+import FileUploadDialog from "../components/FileUploadDialog";
 import Form from "../components/form";
 import logo from "../img/logo.svg";
 
@@ -25,6 +26,7 @@ export function TranslatorPage() {
               className={styles.logo}
             />
             <div style={{ flexGrow: 1 }}></div>
+            <FileUploadDialog />
             <AboutUsDialog />
             <SettingsDialogButton onClick={() => setIsSettingsOpen(true)} />
           </Toolbar>

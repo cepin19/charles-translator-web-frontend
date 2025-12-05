@@ -3,11 +3,7 @@ import { Message } from "../domain/Message";
 import { TranslationError } from "../domain/TranslationError";
 import { TranslationErrorCode } from "../domain/TranslationErrorCode";
 import { TranslationStep } from "../domain/TranslationStep";
-
-const BASE_API_URL =
-  "https://lindat.mff.cuni.cz/services/translation/api/v2/languages/";
-
-const API_URL = BASE_API_URL + "?frontend=u4u";
+import { API_URL } from "../../config/api";
 
 export class LindatApiV2Model implements TranslationStep {
   readonly origin: IsoLanguage;

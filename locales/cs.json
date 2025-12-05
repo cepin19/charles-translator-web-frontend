@@ -113,5 +113,21 @@
     "eraseAppDataNotice": "Toto tlačítko vymaže veškerá lokálně uložená data týkající se aplikace (data na tomto zařízení). Vymaže se tedy lokální historie překladů a veškeré uživatelská preference.",
     "save": "Uložit",
     "close": "Zavřít"
+  },
+  "fileUpload": {
+    "uploadFile": "Nahrát soubor k překladu",
+    "title": "Přeložit soubor",
+    "selectLanguages": "Vyberte zdrojový a cílový jazyk",
+    "selectFile": "Vyberte soubor k překladu",
+    "chooseFile": "Vybrat soubor",
+    "supportedFormats": "Podporované formáty: {{formats}}",
+    "unsupportedFileType": "Nepodporovaný typ souboru. Podporované formáty: {{extensions}}",
+    "fileTooLarge": "Soubor je příliš velký",
+    "timeout": "Překlad vypršel. Zkuste to prosím znovu.",
+    "uploadFailed": "Nahrání souboru selhalo. Zkuste to prosím znovu.",
+    "translating": "Překládání souboru...",
+    "translationReady": "Překlad byl úspěšně dokončen!",
+    "download": "Stáhnout",
+    "uploadAndTranslate": "Nahrát a přeložit"
   }
 }

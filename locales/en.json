@@ -113,5 +113,21 @@
     "eraseAppDataNotice": "This button erases all locally-stored application data inside this device. This includes the translation history and all the preferences.",
     "save": "Save",
     "close": "Close"
+  },
+  "fileUpload": {
+    "uploadFile": "Upload file for translation",
+    "title": "Translate File",
+    "selectLanguages": "Select source and target languages",
+    "selectFile": "Select file to translate",
+    "chooseFile": "Choose File",
+    "supportedFormats": "Supported formats: {{formats}}",
+    "unsupportedFileType": "Unsupported file type. Supported formats: {{extensions}}",
+    "fileTooLarge": "File is too large",
+    "timeout": "Translation timed out. Please try again.",
+    "uploadFailed": "File upload failed. Please try again.",
+    "translating": "Translating file...",
+    "translationReady": "Translation completed successfully!",
+    "download": "Download",
+    "uploadAndTranslate": "Upload and Translate"
   }
 }
