@@ -28,7 +28,7 @@ export function SettingsDialogButton({ onClick }) {
 
   return (
     <Tooltip title={t("iconButtonTooltip")}>
-      <IconButton size="small" edge="start" sx={{ mr: 1 }} onClick={onClick}>
+      <IconButton size="small" edge="start" onClick={onClick}>
         <SettingsIcon />
       </IconButton>
     </Tooltip>

@@ -34,6 +34,12 @@
   }
 }
 
+.toolbarActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .logo {
   // max-height: 60%;
   width: 260px;

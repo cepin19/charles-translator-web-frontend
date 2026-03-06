@@ -26,9 +26,11 @@ export function TranslatorPage() {
               className={styles.logo}
             />
             <div style={{ flexGrow: 1 }}></div>
-            <FileUploadDialog />
-            <AboutUsDialog />
-            <SettingsDialogButton onClick={() => setIsSettingsOpen(true)} />
+            <div className={styles.toolbarActions}>
+              <FileUploadDialog />
+              <AboutUsDialog />
+              <SettingsDialogButton onClick={() => setIsSettingsOpen(true)} />
+            </div>
           </Toolbar>
         </AppBar>
         <TryAndroidAppBanner />
