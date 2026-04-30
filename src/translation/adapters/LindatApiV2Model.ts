@@ -52,6 +52,7 @@ export class LindatApiV2Model implements TranslationStep {
           author: message.author.organizationName,
           src: this.origin,
           tgt: this.target,
+          prompt: "Translate the following text from {src} into {tgt}: {sentence}",
         }),
       });
 
