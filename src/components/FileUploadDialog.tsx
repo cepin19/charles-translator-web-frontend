@@ -23,7 +23,7 @@ import { translationGraph } from '../translation'
 import { IsoLanguage } from '../translation/domain/IsoLanguage'
 import { privacyPreferencesRepository } from '../persistence/PrivacyPreferencesRepository'
 import { userPreferencesRepository } from '../persistence/UserPreferencesRepository'
-import { API_URL } from '../config/api'
+import { API_URL, TRANSLATION_PROMPT } from '../config/api'
 
 import * as styles from './FileUploadDialog.module.scss'
 
@@ -105,6 +105,9 @@ export default function FileUploadDialog() {
                 logInput: privacyPreferences?.allowsDataCollection ? 'true' : 'false',
                 author: userPreferences.organizationName || '',
             })
+            if (TRANSLATION_PROMPT.trim() !== '') {
+                params.set('prompt', TRANSLATION_PROMPT)
+            }
 
             const response = await fetch(`${API_URL}&${params.toString()}`, {
                 method: 'POST',

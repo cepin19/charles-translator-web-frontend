@@ -3,7 +3,7 @@ import { Message } from "../domain/Message";
 import { TranslationError } from "../domain/TranslationError";
 import { TranslationErrorCode } from "../domain/TranslationErrorCode";
 import { TranslationStep } from "../domain/TranslationStep";
-import { API_URL } from "../../config/api";
+import { API_URL, TRANSLATION_PROMPT } from "../../config/api";
 
 export class LindatApiV2Model implements TranslationStep {
   readonly origin: IsoLanguage;
@@ -34,6 +34,19 @@ export class LindatApiV2Model implements TranslationStep {
       ? "true"
       : "false";
 
+    const prompt = TRANSLATION_PROMPT;
+    const payload = new URLSearchParams({
+      input_text: normalizedMessageText,
+      logInput: encodedLoggingConsent,
+      inputType: message.inputMethod,
+      author: message.author.organizationName,
+      src: this.origin,
+      tgt: this.target,
+    });
+    if (prompt !== "") {
+      payload.set("prompt", prompt);
+    }
+
     try {
       const response = await fetch(API_URL, {
         method: "POST",
@@ -41,14 +54,7 @@ export class LindatApiV2Model implements TranslationStep {
           Accept: "application/json",
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: new URLSearchParams({
-          input_text: normalizedMessageText,
-          logInput: encodedLoggingConsent,
-          inputType: message.inputMethod,
-          author: message.author.organizationName,
-          src: this.origin,
-          tgt: this.target,
-        }),
+        body: payload,
       });
 
       if (response.ok) {
